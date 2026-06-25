@@ -623,7 +623,7 @@ const subscribe = async () => {
             onClick={subscribe}
             className="btn-grad bundi"
           >
-            {loading ? "Joining..." : (
+            {loading ? "Joining...." : (
               <img
                 src={sub}
                 alt="wolfy"
