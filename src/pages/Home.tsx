@@ -13,14 +13,18 @@ import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
 import bra from "../../public/assets/wolff.png"
 import sub from "../../public/assets/pack.png"
 import { Link, useNavigate } from "react-router-dom";
-import shirtImg from "../../public/assets/ty-ty.png"
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import Masonry from "../components/Masonry";
 import { useState } from "react";
 import { DATABASE_ID, databases, ID, WAITLIST_COLLECTION_ID } from "../components/lib/appwrite";
 import { toast } from "react-toastify";
 
-
+import shirtImg from "../../public/assets/t-sho.png";
+import tshirtImg from "../../public/assets/swaet.png"
+import sweatImg from "../../public/assets/sweaty.png"
+import tshoImg from "../../public/assets/combato.png"
+import shotImg from "../../public/assets/ty-ty.png"
+import combImg from "../../public/assets/trao.png"
 
 const Home = () => {
 
@@ -81,38 +85,38 @@ const demoItems = [
 const itex = [
     {
       id: "1",
-      img: "https://picsum.photos/id/1015/600/900?grayscale",
-      url: "https://example.com/one",
-      height: 400,
+      img: shirtImg,
+      url: "",
+      height: 340,
     },
     {
       id: "2",
-      img: "https://picsum.photos/id/1011/600/750?grayscale",
-      url: "https://example.com/two",
-      height: 250,
+      img: tshoImg,
+      url: "",
+      height: 150,
     },
     {
       id: "3",
-      img: "https://picsum.photos/id/1020/600/800?grayscale",
-      url: "https://example.com/three",
-      height: 600,
+      img: tshirtImg,
+      url: "",
+      height: 200,
     },
     {
       id: "4",
-      img: shirtImg,
-      url: "https://example.com/one",
+      img: combImg,
+      url: "",
       height: 550,
     },
     {
       id: "5",
-      img: "https://picsum.photos/id/1011/600/750?grayscale",
-      url: "https://example.com/two",
+      img: sweatImg,
+      url: "",
       height: 350,
     },
     {
       id: "6",
-      img: "https://picsum.photos/id/1020/600/800?grayscale",
-      url: "https://example.com/three",
+      img: shotImg,
+      url: "",
       height: 200,
     },
     // ... more items
@@ -423,17 +427,17 @@ const subscribe = async () => {
         </span>
 
           {/*Masonry */}
-        <Masonry
-        items={itex}
-        ease="power3.out"
-        duration={1.1}
-        stagger={0.14}
-        animateFrom="bottom"
-        scaleOnHover
-        hoverScale={0.95}
-        blurToFocus
-        colorShiftOnHover
-      />
+          <Masonry
+          items={itex}
+          ease="power3.out"
+          duration={1.1}
+          stagger={0.14}
+          animateFrom="bottom"
+          scaleOnHover
+          hoverScale={0.95}
+          blurToFocus
+          colorShiftOnHover
+        />
 
       
         {/*circular text*/}
@@ -623,7 +627,7 @@ const subscribe = async () => {
               <img
                 src={sub}
                 alt="wolfy"
-                height={50}
+                height={80}
                 className="mwitu"
               />
             )}
@@ -632,6 +636,7 @@ const subscribe = async () => {
         </ScrollStackItem>
 
         <ScrollStackItem itemClassName="trump">
+          <Link to={'/andime'}>
           <img 
             src={bra}
             alt="WOLFGNG"
@@ -639,6 +644,8 @@ const subscribe = async () => {
             width={100}
             className="madem"
           />
+          </Link>
+
           <Link 
             to={'/catalogue'}
             className="poli"

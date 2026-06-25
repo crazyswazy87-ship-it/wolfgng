@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Query } from "appwrite";
 import { DATABASE_ID, databases, WAITLIST_COLLECTION_ID } from "../components/lib/appwrite";
 import { toast } from "react-toastify";
+import wolf from "../../public/assets/wolff.png"
 
 const ADMIN_PASSWORD = "wolfgng2026";
 
@@ -84,30 +85,36 @@ export default function Admin() {
     URL.revokeObjectURL(url);
   };
 
+  const copyEmail = async (email: string) => {
+  try {
+    await navigator.clipboard.writeText(email);
+    toast.success("Email copied");
+  } catch (error) {
+    console.error(error);
+    toast.error("Failed to copy");
+  }
+};
+
   if (!authorized) {
     return (
       <div
-        style={{
-          minHeight: "100vh",
-          display: "grid",
-          placeItems: "center",
-          background: "#0f0f0f",
-          color: "#fff",
-        }}
+       className="home-cony"
       >
         <div
-          style={{
-            width: "100%",
-            maxWidth: "400px",
-            padding: "2rem",
-          }}
+          className="seer"
         >
           <h1>WolfGNG Admin</h1>
+          <img 
+            src={wolf}
+            alt="wolfy"
+            className="koima"
+          />
 
           <input
             type="password"
             placeholder="Enter password"
             value={password}
+            className="seaker"
             onChange={(e) => setPassword(e.target.value)}
             style={{
               width: "100%",
@@ -118,12 +125,7 @@ export default function Admin() {
 
           <button
             onClick={login}
-            style={{
-              width: "100%",
-              marginTop: "1rem",
-              padding: "12px",
-              cursor: "pointer",
-            }}
+            className="btn-gradd"
           >
             Login
           </button>
@@ -134,32 +136,31 @@ export default function Admin() {
 
   return (
     <div
-      style={{
-        padding: "2rem",
-        minHeight: "100vh",
-        background: "#111",
-        color: "#fff",
-      }}
+     className="home-cony"
     >
       <h1>WolfGNG Waitlist Dashboard</h1>
 
+      <img 
+        src={wolf}
+        alt="wolfy"
+        className="koima"
+      />
+
       <div
-        style={{
-          marginTop: "1rem",
-          display: "flex",
-          gap: "1rem",
-          flexWrap: "wrap",
-        }}
+        className="mbaya"
       >
         <div>
           <strong>Total Subscribers:</strong> {emails.length}
         </div>
 
-        <button onClick={loadEmails}>
+        <button 
+        className="btn-gradd" onClick={loadEmails}>
           Refresh
         </button>
 
-        <button onClick={exportCSV}>
+        <button
+        className="btn-gradd"
+         onClick={exportCSV}>
           Export CSV
         </button>
       </div>
@@ -175,17 +176,14 @@ export default function Admin() {
           padding: "12px",
           marginTop: "1rem",
         }}
+        className="seaker"
       />
 
       {loading ? (
         <p>Loading...</p>
       ) : (
         <table
-          style={{
-            width: "100%",
-            marginTop: "2rem",
-            borderCollapse: "collapse",
-          }}
+          className="timber"
         >
           <thead>
             <tr>
