@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
 import { useNavigate } from 'react-router-dom';
+import ScrollVelocity from './ScrollVelocity';
 
 type CardNavLink = {
   label: string;
@@ -188,8 +189,19 @@ const CardNav: React.FC<CardNavProps> = ({
               src={logo}
               alt={logoAlt}
               className="logo"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/wolfgng")}
               style={{ cursor: "pointer" }}
+            />
+          </div>
+
+          <div className='brdays'>
+            <ScrollVelocity
+              texts={['Wolf GNG', 'New Merchendise']} 
+              velocity={50}
+              className="custom-scroll-text"
+              numCopies={4}
+              damping={70}
+              stiffness={750}
             />
           </div>
 

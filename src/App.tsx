@@ -5,6 +5,8 @@ import Catalogue from './pages/Catalogue'
 import RefundPolicy from './components/shared/RefundPolicy'
 import TermsAndConditions from './components/shared/TermsAndConditions'
 import { ToastContainer } from 'react-toastify'
+import HomePage from './pages/HomePage'
+import CreatePost from './pages/CreatePost'
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
     <ToastContainer />
     
     <Routes>
+      <Route path='/wolfgng' element={<HomePage />} />
       <Route path="/" element={<Home />} />
+      <Route path="/post" element={<CreatePost />} />
       <Route path="/andime" element={<Admin />} />
       <Route path="/catalogue" element={<Catalogue />} />
       <Route path="/refund" element={<RefundPolicy />} />

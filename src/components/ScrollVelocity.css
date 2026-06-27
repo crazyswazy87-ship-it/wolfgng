@@ -1,6 +1,6 @@
 .parallax {
   position: relative;
-  width: 300px;
+  width: 100px;
   color: white;
   display: flex;
   justify-self: center;
@@ -12,7 +12,7 @@
   white-space: nowrap;
   text-align: center;
   font-family: sans-serif;
-  font-size: 2.00rem;
+  font-size: 1.00rem;
   font-weight: bold;
   letter-spacing: -0.02em;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
